@@ -5,8 +5,6 @@
     <div v-if="student" class="name">
       <h4><span>Student Name:</span> {{ student.name }}</h4>
       <h4><span>Student Email:</span> {{ student.email }}</h4>
-      
-      
 
       <button v-if="user" @click="handleClick" class="delete">
         Delete Name
@@ -16,28 +14,25 @@
 </template>
 
 <script>
-import getName from "../composables/getName";
-import getUser from "../composables/getUser";
-import { projectFireStore } from "../firebase/config";
-import { useRouter } from "vue-router";
+import getName from "../composables/getName"
+import getUser from "../composables/getUser"
+import { projectFireStore } from "../firebase/config"
+import { useRouter } from "vue-router"
 export default {
   props: ["id"],
   setup(props) {
-    const router = useRouter();
-    const { student, error, loadName } = getName(props.id);
-    const { user } = getUser();
-    loadName();
+    const router = useRouter()
+    const { student, error, loadName } = getName(props.id)
+    const { user } = getUser()
+    loadName()
     const handleClick = async () => {
-      await projectFireStore
-        .collection("students")
-        .doc(props.id)
-        .delete();
-      console.log("clicked");
-      router.push("/NameList");
-    };
-    return { student, error, handleClick, getName, user, loadName };
+      await projectFireStore.collection("students").doc(props.id).delete()
+      console.log("clicked")
+      router.push("/NameList")
+    }
+    return { student, error, handleClick, getName, user, loadName }
   },
-};
+}
 </script>
 
 <style>
@@ -71,6 +66,7 @@ button.delete {
   margin-top: 20px;
   background: crimson;
   border-radius: 20px;
+  color: white;
   padding: 5px 10px 5px 10px;
 }
 button.signup {
