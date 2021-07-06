@@ -5,7 +5,7 @@
   >
     <div class="name-card">
       <h4>{{ student.name }}</h4>
-      <h4>{{ student.email }}</h4>
+      <h5>{{ student.email }}</h5>
       <h4>{{ student.job }}</h4>
     </div>
   </router-link>
@@ -14,7 +14,7 @@
 <script>
 export default {
   props: ["student"],
-};
+}
 </script>
 
 <style scoped>
@@ -22,7 +22,7 @@ export default {
   padding: 10px;
   width: 250px;
   cursor: pointer;
-   background-color: rgb(203, 247, 232);
+  background-color: rgb(203, 247, 232);
   border: 1px solid #39495c;
   border-radius: 25px;
   margin-bottom: 18px;
