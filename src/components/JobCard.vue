@@ -31,7 +31,9 @@ export default {
   border: 1px solid #39495c;
   margin-bottom: 18px;
   border-radius: 20px;
-  
+  color: blue;
+   background-color: rgb(203, 247, 232);
+  font-weight: bolder;
 }
 .job-card:hover {
   transform: scale(1.01);
@@ -39,5 +41,6 @@ export default {
 }
 .job-link {
   text-decoration: none;
+  font-weight: bold;
 }
 </style>

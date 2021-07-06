@@ -1,5 +1,8 @@
 <template>
+  
   <div v-if="students.length" class="name-list">
+    <h2>Student List</h2>
+    <img alt="Vue logo" src="../assets/mcfatLogo.png" />
     <transition-group appear @before-enter="beforeEnter" @enter="enter">
       <div v-for="(student, index) in students" :key="student.id" :data-index="index">
         <SingleName :student="student"/>
@@ -46,12 +49,18 @@ export default {
 .name-list {
   margin: 0, auto;
   padding: 20px;
-  color: orange;
+  color: rgb(26, 91, 165);
   min-height: 80vh;
-  background-color: #171e29;
+  background-color: aquamarine;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.name-list img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 button {
   border-radius: 20px;
@@ -60,7 +69,7 @@ button {
   background-color: #0f5de6;
 }
 .spinBack {
-  background-color: #171e29;
+  background-color: aquamarine;
   padding-top: 20px;
   min-height: 80vh;
 }

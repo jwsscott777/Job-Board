@@ -1,10 +1,10 @@
 <template>
   <div class="name-details">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <img alt="Vue logo" src="../assets/mcfatLogo.png" />
     <div v-if="error">{{ error }}</div>
     <div v-if="student" class="name">
-      <h4>{{ student.name }}</h4>
-      <h4>{{ student.email }}</h4>
+      <h4><span>Student Name:</span> {{ student.name }}</h4>
+      <h4><span>Student Email:</span> {{ student.email }}</h4>
       
       
 
@@ -42,27 +42,41 @@ export default {
 
 <style>
 .name-details {
-  background-color: #c2cde2;
+  background-color: aquamarine;
+}
+.name-details img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 .name {
   max-width: 1200px;
   margin: 0 auto;
   min-height: 80vh;
 }
-.name p {
+.name h2 {
   color: #444;
   line-height: 1.5rem;
   margin-top: 40px;
-  color: orange;
+}
+.name h4 {
+  color: blue;
 }
 .pre {
   white-space: pre-wrap;
 }
 button.delete {
   margin: 10px auto;
+  margin-top: 20px;
   background: crimson;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
 }
 button.signup {
   margin: 10px auto;
+}
+span {
+  color: black;
 }
 </style>

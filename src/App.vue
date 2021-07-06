@@ -3,10 +3,11 @@
   <div id="app">
     <div id="nav">
     <router-link to="/">Job List</router-link> |
+    
+    <router-link v-if="user" to="/create">Add Job</router-link> |
     <router-link v-if="!user" to="/login" >Admin</router-link>
-    <router-link v-else to="/create">Add Job</router-link> |
     <router-link v-if="user" to="/nameList" >Students</router-link>
-    <button v-if="user" @click="handleLogout">LogOut</button>
+    <button v-if="user" @click="handleLogout">Admin LogOut</button>
   </div>
   <router-view />
   </div>
@@ -15,16 +16,19 @@
 <script>
 import useLogout from "./composables/useLogout"
 import getUser from "./composables/getUser"
+import { useRouter } from 'vue-router'
 
 export default {
   setup() {
     const { logout, error } = useLogout()
     const { user } = getUser()
+    const router = useRouter()
 
     const handleLogout = async () => {
       await logout();
       if (!error.value) {
         console.log("logged out");
+        router.push({ name: 'JobList'});
       }
     }
     
@@ -40,7 +44,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #040a11;
+  background-color: rgb(203, 247, 232);
 }
 
 #nav {
@@ -60,8 +65,13 @@ h4 {
   font-size: 20px;
 }
 #nav button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   margin: 10px auto;
+  color: azure;
   background: crimson;
+  border-radius: 20px;
 }
 
 

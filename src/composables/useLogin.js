@@ -13,8 +13,8 @@ const login = async (email, password) => {
         return res
     }
     catch(err) {
-        console.log(err.value)
         error.value = "You must be an Admin to log in."
+        setTimeout(() => (error.value = false), 3000);
     }
 }
 

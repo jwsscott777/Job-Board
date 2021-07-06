@@ -77,12 +77,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.create {
+  background-color: aquamarine;
+}
   form {
     padding: 20px;
     max-width: 480px;
     margin: 0 auto;
     text-align: left;
+  }
+  input {
+    color: #0051ff;
   }
   input, textarea {
     display: block;
@@ -91,9 +97,11 @@ export default {
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid rgb(167, 163, 163);
+     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
   }
   textarea {
     height: 160px;
+    color: #0051ff;
   }
   label {
     display: inline-block;
@@ -122,15 +130,9 @@ export default {
     color: white;
     border: none;
     padding: 8px 16px;
-    font-size: 18px
-  }
-  .pill {
-    display: inline-block;
-    margin: 10px 10px 0 0;
-    color: #444;
-    background: #ddd;
-    padding: 8px;
+    font-size: 18px;
     border-radius: 20px;
-    font-size: 14px;
+     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
   }
+  
 </style>
